@@ -2,7 +2,6 @@
 //
 
 #include <iostream>	
-#include <string>
 using namespace std;
 
 
@@ -32,12 +31,12 @@ int main()
 	};
 
 	char Redo = '\0';
-	
+	int Replay=0;
+	int Choice = 0;
 	do
 	{
-	
-	
-	cout << "Type a colour and find out if it is a colour of the rainbow." <<  " Available Colors are:" <<  endl;
+	if (Replay == 0)
+		{cout << "Type a colour and find out if it is a colour of the rainbow." <<  " Available Colors are:" <<  endl;
 	cout << "Red: " << Red << endl;
 	cout << "Orange: " << Orange << endl;
 	cout << "Yellow: " << Yellow << endl;
@@ -55,10 +54,11 @@ int main()
 	cout << "Teal: " << Teal << endl;
 	cout << "AlabasterMidnight: " << AlabasterMidnight << endl;
 	cout << "Crimson: " << Crimson << endl;
-
-	cout << "Please choose a code: ";
-	int Choice = 0;
+	++Replay;
+		}
+	cout << "Please choose a code between 1-16: ";
 	cin >> Choice;
+		
 
 	switch (Choice)
 	{
@@ -70,13 +70,14 @@ int main()
 		case Blue:
 		case Indigo:
 		case Violet:
-			cout << "Your choice is in the rainbow" << endl;
+			cout << "Your choice " << Choice << " is in the rainbow" << endl;
 			break;
 
 	default:
 		cout << "Your choice is not in the rainbow"<< endl;
 		break;
 	}
+	
 	cout << "would you like to try another colour? (y/n)"<< endl;
 	cin >> Redo;
 
